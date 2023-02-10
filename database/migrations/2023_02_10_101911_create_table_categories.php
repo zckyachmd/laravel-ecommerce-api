@@ -13,14 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
+        // Check if the table already exists
+        if (Schema::hasTable('categories')) {
+            return;
+        }
+
+        // Create the table if it doesn't exist
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->morphs('tokenable');
-            $table->string('name');
-            $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
-            $table->timestamp('last_used_at')->nullable();
-            $table->timestamp('expires_at')->nullable();
+            $table->string('name')->unique()->index();
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -32,6 +34,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal_access_tokens');
+        // Drop the table if it exists
+        Schema::dropIfExists('categories');
     }
 };
