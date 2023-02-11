@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "da533962-6aba-4557-b756-cf22025563e4",
+		"name": "Laravel-ECommerce-API",
+		"description": "Restful API built using Laravel 9, as a medium for training and learning with the \"Online Store\" case study.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16163112"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/api/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"category"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "dolor",
+									"description": "OPT | string",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "name",
+									"description": "OPT | string (name, description)",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "desc",
+									"description": "OPT | enum (asc, desc) | default (asc)",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "15",
+									"description": "OPT | integer | default (10)",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "OPT | integer | default (1)",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Retrieving all categories data with pagination format in return."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/category/17",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"17"
+							]
+						},
+						"description": "Retrieving category data with a specific Category ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Electronik",
+									"description": "REQUIRED | string",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "TV, Printer, AC, Kulkas dll",
+									"description": "REQUIRED | string",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"category"
+							]
+						},
+						"description": "Create a new data category."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"description": "REQUIRED | DON'T CHANGE METHOD!",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Gadget",
+									"description": "REQUIRED | string",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Handphone, Laptop",
+									"description": "REQUIRED | string",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/category/17",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"17"
+							]
+						},
+						"description": "Update category data with specific Category ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/api/category/17",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"17"
+							]
+						},
+						"description": "Delete category data with a specific Category ID."
+					},
+					"response": []
+				}
+			],
+			"description": "The \"category\" folder on the e-commerce API endpoint is responsible for managing all operations related to product categories, such as displaying category lists, adding new categories, updating category information, and deleting categories."
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/api/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "dolor",
+									"description": "OPT | string",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "name",
+									"description": "OPT | string (name, description)",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "desc",
+									"description": "OPT | enum (asc, desc) | default (asc)",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "15",
+									"description": "OPT | integer | default (10)",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "OPT | integer | default (1)",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Retrieving all products data with pagination format in return."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/product/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"1"
+							]
+						},
+						"description": "Retrieving product data with a specific Product ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Kulkas 2 Pintu",
+									"description": "REQUIRED | string",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Memiliki 2 Pintu masuk dan keluar",
+									"description": "REQUIRED | string",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "https://via.placeholder.com/300/09f/kulkas.png",
+									"description": "REQUIRED | string",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10000",
+									"description": "REQUIRED | integer",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "50",
+									"description": "REQUIRED | integer",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"description": "REQUIRED | integer",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						},
+						"description": "Create a new data product."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"description": "REQUIRED | DON'T CHANGE METHOD!",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Kulkas 2 Pintu",
+									"description": "REQUIRED | string",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Memiliki 2 Pintu masuk dan keluar di lengkapi kunci",
+									"description": "REQUIRED | string",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "https://via.placeholder.com/300/09f/kulkas.png",
+									"description": "REQUIRED | string",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10000",
+									"description": "REQUIRED | integer",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "50",
+									"description": "REQUIRED | integer",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"description": "REQUIRED | integer",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/product/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"1"
+							]
+						},
+						"description": "Create a new data product."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/api/product/17",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"17"
+							]
+						},
+						"description": "Delete product data with a specific Product ID."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
