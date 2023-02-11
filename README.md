@@ -16,7 +16,7 @@ A RESTful API built with Laravel Framework for e-commerce applications. This API
 -   Composer
 -   Laravel >= 9.0
 -   MySQL database
--   Postman
+-   Postman V2
 
 ## Getting Started
 
@@ -44,8 +44,6 @@ A RESTful API built with Laravel Framework for e-commerce applications. This API
 ## API Endpoints
 
 The API documentation can be accessed at [Postman](https://documenter.getpostman.com/view/16163112/2s935uFLAF) or import from file `Laravel-ECommerce-API.postman_collection.json` to Postman V2
-
-Please adhere to this project's `code of conduct`.
 
 ## License
 
