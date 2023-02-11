@@ -28,8 +28,8 @@ class CategoryController extends Controller
             }
 
             // Get query limit and page
-            $limit = $request->limit ?? 10; // Default limit 10
-            $page = $request->page ?? 1;    // Default page 1
+            $limit  = $request->limit ?? 10;    // Default limit 10
+            $page   = $request->page ?? 1;      // Default page 1
 
             // Create query builder
             $categories = $category->newQuery();
@@ -48,9 +48,6 @@ class CategoryController extends Controller
 
             // Check if has query search
             if ($request->has('search')) {
-                // Validate query search
-                $request->validate($category->rules(false));
-
                 // Search by name and description
                 $categories = $categories->where('name', 'like', '%' . $request->search . '%')
                     ->orWhere('description', 'like', '%' . $request->search . '%');
@@ -90,9 +87,9 @@ class CategoryController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request, Category $category)
+    public function store(Request $request, Category $category): JsonResponse
     {
         try {
             // Validate request
@@ -133,9 +130,9 @@ class CategoryController extends Controller
      *
      * @param  \App\Models\Category  $category
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function show(Category $category, $id)
+    public function show(Category $category, $id): JsonResponse
     {
         try {
             // Convert id to integer
@@ -235,9 +232,9 @@ class CategoryController extends Controller
      *
      * @param  \App\Models\Category  $category
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(Category $category, $id)
+    public function destroy(Category $category, $id): JsonResponse
     {
         try {
             // Convert id to integer

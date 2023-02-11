@@ -28,6 +28,7 @@ return new class extends Migration
             $table->integer('quantity');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

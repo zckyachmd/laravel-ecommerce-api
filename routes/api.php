@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +23,6 @@ Route::controller(CategoryController::class)->prefix('category')->group(function
     Route::put('/{id}', 'update');
     Route::delete('/{id}', 'destroy');
 });
-
 
 /** Products Controller */
 Route::controller(ProductController::class)->prefix('product')->group(function () {
